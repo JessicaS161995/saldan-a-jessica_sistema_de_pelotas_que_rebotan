@@ -1,18 +1,17 @@
-let miPelota;
-let frutas = ["manzana", miPelota, 234, "granadilla"];
-
-for (let LQS = 0; LQS < 10; LQS += 1){
-  console.log(LQS)
-}
-
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  miPelota = new Pelota();
+  noLoop();
 }
 
 function draw() {
-  background(255);
-  circle(mouseX, mouseY, 20);
-  miPelota.update(300);
-  miPelota.display();
+  let anchura = 30;
+  let spacing = 40;
+
+  for (let x = 50; x < width; x += spacing) {
+    for (let y = 50; y < height; y += spacing) {
+      square(x, y, anchura);
+    }
+  }
 }
+ 
+
