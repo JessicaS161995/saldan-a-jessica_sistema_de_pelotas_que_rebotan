@@ -1,7 +1,7 @@
 class Pelota{
-    constructor() {
-        this.posX = random(50, windowWidth - 50);
-        this.posY = random(50, 70);
+    constructor(_x,_y) {
+        this.posX = _x;
+        this.posY = _y;
         this.velX = random(-1, 1);
         this.velY = 0;
         this.acelY = 0.98;

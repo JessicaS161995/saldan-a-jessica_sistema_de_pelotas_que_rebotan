@@ -1,17 +1,22 @@
+pelotas = []
+const NP = 10;
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  noLoop();
+  for (let i = 0; i < NP; i++){
+    let pelota = new Pelota(); 
+    pelotas.push(pelota);
+  }
+  print(pelotas);
 }
 
 function draw() {
-  let anchura = 30;
-  let spacing = 40;
-
-  for (let x = 50; x < width; x += spacing) {
-    for (let y = 50; y < height; y += spacing) {
-      square(x, y, anchura);
-    }
+  background(163, 99, 252);
+  for (let i = 0; i < NP; i++){
+    pelotas[i].update(windowHeight)
+    pelotas[i].display();
   }
+ 
 }
  
 
