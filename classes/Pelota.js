@@ -1,13 +1,13 @@
 class Pelota{
     constructor(_x,_y) {
-        this.posX = _x;
-        this.posY = _y;
-        this.velX = random(-1, 1);
-        this.velY = 0;
+        this.posX = random(50, windowWidth - 50);
+        this.posY = random(10, 130);
+        this.velX = random(-20, 20);
+        this.velY = 0,0;
         this.acelY = 0.98;
-        this.diam = int(random(5, 50));
+        this.diam = int(random(5, 75));
         this.radio = this.diam / 2;
-        this.colorin = color(20, random(100, 255), random(0, 150));
+        this.colorin = color(50, random(157, 25), random(24, 118));
 
         print("Hola, estoy vivo!");
     }
@@ -19,8 +19,16 @@ class Pelota{
             this.velY *= -1;
             this.posY += this.velY;
         }
-    
+
+        if (this.posX > windowWidth) {
+			this.velX *= -1;
+		}
+		if (this.posX < 0) {
+			this.velX *= -1;
+		}
+		this.posX += this.velX;
     }
+
     display() {
         fill(this.colorin);
         circle(this.posX, this.posY, this.diam);
