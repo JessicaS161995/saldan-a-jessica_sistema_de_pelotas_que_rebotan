@@ -9,7 +9,7 @@ class Pelota {
         this.diam = int(random(5, 25));
       this.rad = this.diam / 2;
   
-      // Establece un color con opacidad aleatoria
+        
       this.colorin = color(
         random(255),
         random(100),
